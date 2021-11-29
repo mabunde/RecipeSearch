@@ -116,7 +116,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
                 android:layout_marginStart="30dp"
-                android:id="@+id/getstartedButton"
+                android:id="@+id/signUpButton"
                 android:padding="15dp"
                 android:text="Sign up"
                 android:textColor="@android:color/white"
