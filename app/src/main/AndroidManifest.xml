@@ -22,7 +22,7 @@
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.yummlyapi.MainActivity">
+                android:value="com.moringaschool.yummlyapi.SignupActivity">
             </meta-data>
         </activity>
         <activity
