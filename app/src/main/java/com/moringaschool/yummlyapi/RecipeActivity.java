@@ -19,7 +19,7 @@ public class RecipeActivity extends AppCompatActivity {
     TextView mLocationTextView;
     @BindView(R.id.listView)
     ListView mListView;
-    private String[] dishes = new String[]{"Fried fish", "croissant", "Seafood paella", "Chicken rice", " Tacos", "Pork ribs",
+    private String[] dishes = new String[]{"Fried fish", "Croissant", "Seafood paella", "Chicken rice", " Tacos", "Pork ribs",
             "Potato chips"};
     private String[] recipes = new String[]{"vegetable oil", "baking flour", "shrimp and rice", "chicken and rice", "Cheddar cheese",
             "pork", "cooking oil and potatoes"};
@@ -40,8 +40,7 @@ public class RecipeActivity extends AppCompatActivity {
             }
         });
         Intent intent = getIntent();
-        String origin = intent.getStringExtra("origin");
-        mLocationTextView.setText("Here are all the dishes origin: " + origin);
+        mLocationTextView.setText("Here are all the dishes available: ");
 
     }
 }

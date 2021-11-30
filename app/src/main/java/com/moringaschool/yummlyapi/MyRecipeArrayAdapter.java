@@ -18,7 +18,7 @@ public class MyRecipeArrayAdapter extends ArrayAdapter {
     public Object getItem(int position) {
         String dish = mDish[position];
         String recipe = mRecipe[position];
-        return String.format("%s \nServes great: %s", dish, recipe);
+        return String.format("%s \nRecipe: %s", dish, recipe);
     }
 
     @Override
