@@ -5,20 +5,20 @@ import android.widget.ArrayAdapter;
 
 public class MyRecipeArrayAdapter extends ArrayAdapter {
     private Context mContext;
+    private String[] mDish;
     private String[] mRecipe;
-    private String[] mIngredients;
 
-    public MyRecipeArrayAdapter(Context mContext, int resource, String[] mRecipe, String[] mIngredients) {
+    public MyRecipeArrayAdapter(Context mContext, int resource, String[] mDish, String[] mRecipe) {
         super(mContext, resource);
         this.mContext = mContext;
+        this.mDish = mDish;
         this.mRecipe = mRecipe;
-        this.mIngredients = mIngredients;
     }
     @Override
     public Object getItem(int position) {
-        String restaurant = mRecipe[position];
-        String cuisine = mIngredients[position];
-        return String.format("%s \nServes great: %s", recipe, ingredients);
+        String restaurant = mDish[position];
+        String cuisine = mRecipe[position];
+        return String.format("%s \nServes great: %s", dish, recipe);
     }
 
     @Override
