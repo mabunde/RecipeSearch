@@ -18,6 +18,8 @@ It is a simple application that it will be consuming yummly API
     * Robolectics
     * Espresso
     * Junit
+## Bugs
+No Known Bugs
 
 ## Support and contact details
 For support contact solomonsitati39@gmail.com
