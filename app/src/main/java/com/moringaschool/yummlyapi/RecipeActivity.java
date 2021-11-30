@@ -15,13 +15,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class RecipeActivity extends AppCompatActivity {
-    @BindView(R.id.locationTextView)
-    TextView mLocationTextView;
+    @BindView(R.id.locationTextView) TextView mLocationTextView;
     @BindView(R.id.listView)
     ListView mListView;
     private String[] dishes = new String[]{"Fried fish", "Croissant", "Seafood paella", "Chicken rice", " Tacos", "Pork ribs",
             "Potato chips"};
-    private String[] recipes = new String[]{"vegetable oil", "baking flour", "shrimp and rice", "chicken and rice", "Cheddar cheese",
+    private String[] recipes = new String[]{"vegetable oil and fish", "baking flour", "shrimp and rice", "chicken and rice", "Cheddar cheese",
             "pork", "cooking oil and potatoes"};
 
     protected void onCreate(Bundle savedInstanceState) {
