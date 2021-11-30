@@ -14,13 +14,23 @@
             android:exported="false" />
         <activity
             android:name=".SignInActivity"
-            android:exported="false" />
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moringaschool.yummlyapi.MainActivity">
+            </meta-data>
+        </activity>
         <activity
             android:name=".SignupActivity"
-            android:exported="false" />
+            android:exported="false">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.moringaschool.yummlyapi.MainActivity">
+        </meta-data>
+        </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
