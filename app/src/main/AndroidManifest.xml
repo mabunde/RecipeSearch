@@ -11,7 +11,12 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".RecipeActivity"
-            android:exported="false" />
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moringaschool.yummlyapi.MainActivity">
+            </meta-data>
+        </activity>
         <activity
             android:name=".SignInActivity"
             android:exported="false">
