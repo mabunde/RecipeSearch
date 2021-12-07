@@ -28,7 +28,7 @@ android {
         }
     }
     buildTypes.each {
-        it.buildConfigField 'String', 'YUMMLY_API_KEY', YummlyApiKey
+        it.buildConfigField 'String', 'SPOONACULAR_API_KEY', SpoonacularApiKey
     }
 
     compileOptions {
