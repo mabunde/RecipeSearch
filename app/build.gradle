@@ -27,6 +27,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    buildTypes.each {
+        it.buildConfigField 'String', 'YUMMLY_API_KEY', YummlyApiKey
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
