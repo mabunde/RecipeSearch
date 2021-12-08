@@ -73,7 +73,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save Restaurant"
+                android:text="Save Recipe"
                 android:id="@+id/saveRecipeButton"
                 android:layout_alignParentBottom="true"
                 android:background="@color/colorAccent"
