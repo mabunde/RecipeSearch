@@ -23,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:fontFamily="sans-serif"
-        android:text="Welcome To\nYummly API"
+        android:text="Welcome To\nSpoonacular API"
         android:textColor="@color/colorTextIcons"
         android:textSize="50sp"
         android:textStyle="bold" />
