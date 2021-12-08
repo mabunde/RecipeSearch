@@ -7,7 +7,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.moringaschool.yummlyapi.models.Result;
 
-public class SpoonacularRecipeSearchResponse {
+public class RecipeResponse {
 
     @SerializedName("results")
     @Expose
@@ -26,7 +26,7 @@ public class SpoonacularRecipeSearchResponse {
      * No args constructor for use in serialization
      * 
      */
-    public SpoonacularRecipeSearchResponse() {
+    public RecipeResponse() {
     }
 
     /**
@@ -36,7 +36,7 @@ public class SpoonacularRecipeSearchResponse {
      * @param offset
      * @param results
      */
-    public SpoonacularRecipeSearchResponse(List<Result> results, Integer offset, Integer number, Integer totalResults) {
+    public RecipeResponse(List<Result> results, Integer offset, Integer number, Integer totalResults) {
         super();
         this.results = results;
         this.offset = offset;

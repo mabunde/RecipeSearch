@@ -4,20 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.moringaschool.yummlyapi.Constants;
 import com.moringaschool.yummlyapi.R;
 import com.moringaschool.yummlyapi.adapters.RecipeListAdapter;
 import com.moringaschool.yummlyapi.models.Result;
-import com.moringaschool.yummlyapi.models.SpoonacularRecipeSearchResponse;
+import com.moringaschool.yummlyapi.models.RecipeResponse;
 import com.moringaschool.yummlyapi.network.RecipeClient;
 import com.moringaschool.yummlyapi.network.SpoonacularApi;
 
@@ -47,10 +43,10 @@ public class RecipeActivity extends AppCompatActivity {
     }
     public void getRecipeList(){
         SpoonacularApi myClient= RecipeClient.getClient();
-        Call<SpoonacularRecipeSearchResponse> call= myClient.getRecipeList(Constants.SPOONACULAR_API_KEY);
-        call.enqueue(new Callback<SpoonacularRecipeSearchResponse>() {
+        Call<RecipeResponse> call= myClient.getRecipeList(Constants.SPOONACULAR_API_KEY);
+        call.enqueue(new Callback<RecipeResponse>() {
             @Override
-            public void onResponse(Call<SpoonacularRecipeSearchResponse> call, Response<SpoonacularRecipeSearchResponse> response) {
+            public void onResponse(Call<RecipeResponse> call, Response<RecipeResponse> response) {
                 hideProgressBar();
                 if (response.isSuccessful()) {
                     mRecipe = response.body().getResults();
@@ -66,7 +62,7 @@ public class RecipeActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<SpoonacularRecipeSearchResponse> call, Throwable t) {
+            public void onFailure(Call<RecipeResponse> call, Throwable t) {
                 showErrorMessage();
 
             }
