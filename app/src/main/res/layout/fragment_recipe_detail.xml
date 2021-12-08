@@ -13,7 +13,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:id="@+id/restaurantImageView"
+            android:id="@+id/recipeImageView"
             android:src="@drawable/recipe"
             android:scaleType="centerCrop" />
 
@@ -37,16 +37,6 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="jpg"
-                android:id="@+id/imageTypeTextView"
-                android:layout_below="@+id/recipeNameTextView"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:textColor="@color/colorSecondaryText"
-                android:textStyle="italic" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -60,7 +50,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_above="@+id/saveRestaurantButton"
+                android:layout_above="@+id/saveRecipeButton"
                 android:paddingLeft="30dp"
                 android:paddingTop="20dp"
                 android:paddingRight="30dp">
@@ -69,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="View on Spoonacular"
-                    android:id="@+id/websiteTextView"
+                    android:id="@+id/imageTypeTextView"
                     android:drawableLeft="@drawable/ic_baseline_image_white_18dp"
                     android:drawablePadding="4dp"
                     android:textColor="@color/colorTextIcons"
@@ -84,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Save Restaurant"
-                android:id="@+id/saveRestaurantButton"
+                android:id="@+id/saveRecipeButton"
                 android:layout_alignParentBottom="true"
                 android:background="@color/colorAccent"
                 android:textColor="@color/colorTextIcons"

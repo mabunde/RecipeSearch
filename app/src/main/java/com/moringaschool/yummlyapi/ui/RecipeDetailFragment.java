@@ -1,66 +1,83 @@
 package com.moringaschool.yummlyapi.ui;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.moringaschool.yummlyapi.R;
+import com.moringaschool.yummlyapi.models.RecipeResponse;
+import com.moringaschool.yummlyapi.models.Result;
+import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link RecipeDetailFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RecipeDetailFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+public class RecipeDetailFragment extends Fragment implements View.OnClickListener {
+    @BindView(R.id.recipeImageView) ImageView mImageLabel;
+    @BindView(R.id.recipeNameTextView) TextView mNameLabel;
+    @BindView(R.id.imageTypeTextView) TextView mImageTypeLabel;
+    private Result mRecipe;
 
     public RecipeDetailFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RecipeDetailFragment.
-     */
     // TODO: Rename and change types and number of parameters
-    public static RecipeDetailFragment newInstance(String param1, String param2) {
-        RecipeDetailFragment fragment = new RecipeDetailFragment();
+    public static RecipeDetailFragment newInstance(Result recipe) {
+        RecipeDetailFragment recipeDetailFragment = new RecipeDetailFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+        args.putParcelable("recipe", Parcels.wrap(recipe));
+        recipeDetailFragment.setArguments(args);
+        return recipeDetailFragment;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        assert getArguments() != null;
+        mRecipe = Parcels.unwrap(getArguments().getParcelable("recipe"));
+
     }
 
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recipe_detail, container, false);
+        View view =  inflater.inflate(R.layout.fragment_recipe_detail, container, false);
+        ButterKnife.bind(this, view);
+
+        Picasso.get().load(mRecipe.getImage()).into(mImageLabel);
+        mNameLabel.setText(mRecipe.getTitle());
+        mImageTypeLabel.setText(mRecipe.getImageType());
+
+        mImageLabel.setOnClickListener(this);
+
+        return view;
+    }
+    @Override
+    public void onClick(View v) {
+        if (v == mImageLabel) {
+            Intent webIntent = new Intent (Intent.ACTION_VIEW, Uri.parse(mRecipe.getImage()));
+            startActivity(webIntent);
+        }
     }
 }

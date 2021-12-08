@@ -7,6 +7,9 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.moringaschool.yummlyapi.models.Result;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class RecipeResponse {
 
     @SerializedName("results")
