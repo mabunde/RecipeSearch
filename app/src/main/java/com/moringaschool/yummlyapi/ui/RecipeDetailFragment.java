@@ -14,14 +14,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.moringaschool.yummlyapi.R;
-import com.moringaschool.yummlyapi.models.RecipeResponse;
 import com.moringaschool.yummlyapi.models.Result;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
