@@ -60,6 +60,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
             super(itemView);
             ButterKnife.bind(this,itemView);
             mContext=itemView.getContext();
+            itemView.setOnClickListener(this);
         }
 
         public void bindRecipeList( Result result){

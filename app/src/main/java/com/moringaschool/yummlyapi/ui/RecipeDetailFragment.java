@@ -31,6 +31,7 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
     @BindView(R.id.recipeImageView) ImageView mImageLabel;
     @BindView(R.id.recipeNameTextView) TextView mNameLabel;
     @BindView(R.id.imageTypeTextView) TextView mImageTypeLabel;
+
     private Result mRecipe;
 
     public RecipeDetailFragment() {
@@ -60,7 +61,6 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_recipe_detail, container, false);
         ButterKnife.bind(this, view);
-
         Picasso.get().load(mRecipe.getImage()).into(mImageLabel);
         mNameLabel.setText(mRecipe.getTitle());
         mImageTypeLabel.setText(mRecipe.getImageType());

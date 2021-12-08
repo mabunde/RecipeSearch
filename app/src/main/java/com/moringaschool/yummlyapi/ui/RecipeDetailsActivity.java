@@ -28,7 +28,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe_details);
         ButterKnife.bind(this);
 
-        mRecipe = Parcels.unwrap(getIntent().getParcelableExtra("recipes"));
+        mRecipe = Parcels.unwrap(getIntent().getParcelableExtra("recipe"));
         int startingPosition = getIntent().getIntExtra("position", 0);
 
         adapterViewPager = new RecipePagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, mRecipe);
