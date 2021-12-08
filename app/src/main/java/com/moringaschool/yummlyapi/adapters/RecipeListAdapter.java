@@ -1,6 +1,7 @@
 package com.moringaschool.yummlyapi.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringaschool.yummlyapi.R;
 import com.moringaschool.yummlyapi.models.Result;
+import com.moringaschool.yummlyapi.ui.RecipeDetailsActivity;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -46,7 +50,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
         return mRecipe.size();
     }
 
-    public class RecipeListViewHolder extends RecyclerView.ViewHolder{
+    public class RecipeListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         @BindView(R.id.recipeImageView) ImageView mRecipeImageView;
         @BindView(R.id.recipeTitle) TextView mRecipeTitle;
@@ -61,6 +65,14 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
         public void bindRecipeList( Result result){
             Picasso.get().load(result.getImage()).into(mRecipeImageView);
             mRecipeTitle.setText(result.getTitle());
+        }
+        @Override
+        public void onClick(View view) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, RecipeDetailsActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("recipe", Parcels.wrap(mRecipe));
+            mContext.startActivity(intent);
         }
     }
 }
