@@ -1,10 +1,11 @@
 
-package com.moringaschool.yummlyapi;
+package com.moringaschool.yummlyapi.models;
 
 import java.util.List;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.moringaschool.yummlyapi.models.Result;
 
 public class SpoonacularRecipeSearchResponse {
 

@@ -11,31 +11,31 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".RecipeActivity"
+            android:name=".ui.RecipeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.yummlyapi.MainActivity">
+                android:value="com.moringaschool.yummlyapi.ui.MainActivity">
             </meta-data>
         </activity>
         <activity
-            android:name=".SignInActivity"
+            android:name=".ui.SignInActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.yummlyapi.SignupActivity">
+                android:value="com.moringaschool.yummlyapi.ui.SignupActivity">
             </meta-data>
         </activity>
         <activity
-            android:name=".SignupActivity"
+            android:name=".ui.SignupActivity"
             android:exported="false">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.moringaschool.yummlyapi.MainActivity">
+            android:value="com.moringaschool.yummlyapi.ui.MainActivity">
         </meta-data>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

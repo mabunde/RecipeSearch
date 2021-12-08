@@ -1,4 +1,6 @@
-package com.moringaschool.yummlyapi;
+package com.moringaschool.yummlyapi.network;
+
+import com.moringaschool.yummlyapi.Constants;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

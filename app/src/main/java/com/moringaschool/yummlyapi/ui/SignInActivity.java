@@ -1,4 +1,4 @@
-package com.moringaschool.yummlyapi;
+package com.moringaschool.yummlyapi.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,22 +7,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.moringaschool.yummlyapi.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    @BindView(R.id.getstartedButton) Button mGetstartedButton;
+public class SignInActivity extends AppCompatActivity implements View.OnClickListener{
+    @BindView(R.id.signInButton) Button mSignInButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_signin);
         ButterKnife.bind(this);
-        mGetstartedButton.setOnClickListener(this);
+        mSignInButton.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+        Intent intent = new Intent(SignInActivity.this, RecipeActivity.class);
         startActivity(intent);
     }
 }

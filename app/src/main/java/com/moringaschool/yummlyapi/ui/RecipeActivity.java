@@ -1,22 +1,22 @@
-package com.moringaschool.yummlyapi;
+package com.moringaschool.yummlyapi.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.moringaschool.yummlyapi.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class RecipeActivity extends AppCompatActivity {
-    @BindView(R.id.locationTextView) TextView mLocationTextView;
-    @BindView(R.id.listView)
+
     ListView mListView;
     private String[] dishes = new String[]{"Fried fish", "Croissant", "Seafood paella", "Chicken rice", " Tacos", "Pork ribs",
             "Potato chips"};
@@ -28,8 +28,7 @@ public class RecipeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe);
         ButterKnife.bind(this);
 
-        MyRecipeArrayAdapter adapter = new MyRecipeArrayAdapter(this, android.R.layout.simple_list_item_1, dishes, recipes); // the arguments must match constructor's parameters!
-        mListView.setAdapter(adapter);
+
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -39,7 +38,6 @@ public class RecipeActivity extends AppCompatActivity {
             }
         });
         Intent intent = getIntent();
-        mLocationTextView.setText("Here are all the dishes available: ");
 
     }
 }
