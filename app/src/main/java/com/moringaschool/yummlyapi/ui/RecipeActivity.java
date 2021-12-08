@@ -39,6 +39,7 @@ public class RecipeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe);
         ButterKnife.bind(this);
 
+
         getRecipeList();
     }
     public void getRecipeList(){
