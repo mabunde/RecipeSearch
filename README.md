@@ -6,7 +6,7 @@ By Sitati Solomon
 It is an android application that it will be consuming spoonacular API enabling users to view a list of recipes.
 
 ## Setup/Installation Requirements
-* git clone https://github.com/mabunde/Yummly_Design.git
+* git clone https://github.com/mabunde/YummlyApi.git
 * cd to Yummly API/
 * open with android Studio
 * Run the necessary gradle dependencies.
