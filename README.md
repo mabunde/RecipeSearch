@@ -1,9 +1,9 @@
-# Yummly API
+# RecipeFinder
 ## Author
 By Sitati Solomon
 
 ## Description
-It is a simple application that it will be consuming yummly API
+It is an android application that it will be consuming spoonacular API enabling users to view a list of recipes.
 
 ## Setup/Installation Requirements
 * git clone https://github.com/mabunde/Yummly_Design.git
@@ -15,9 +15,9 @@ It is a simple application that it will be consuming yummly API
     * Java
     * Gradle
     * ButterKnife
-    * Robolectics
-    * Espresso
-    * Junit
+    * Retrofit
+    * XML
+    * Android
 ## Bugs
 No Known Bugs
 
