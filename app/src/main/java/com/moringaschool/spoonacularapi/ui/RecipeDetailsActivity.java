@@ -1,4 +1,4 @@
-package com.moringaschool.yummlyapi.ui;
+package com.moringaschool.spoonacularapi.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -6,9 +6,9 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
-import com.moringaschool.yummlyapi.R;
-import com.moringaschool.yummlyapi.adapters.RecipePagerAdapter;
-import com.moringaschool.yummlyapi.models.Result;
+import com.moringaschool.spoonacularapi.R;
+import com.moringaschool.spoonacularapi.adapters.RecipePagerAdapter;
+import com.moringaschool.spoonacularapi.models.Result;
 
 import org.parceler.Parcels;
 

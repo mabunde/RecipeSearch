@@ -1,4 +1,4 @@
-package com.moringaschool.yummlyapi.adapters;
+package com.moringaschool.spoonacularapi.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,9 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.moringaschool.yummlyapi.R;
-import com.moringaschool.yummlyapi.models.Result;
-import com.moringaschool.yummlyapi.ui.RecipeDetailsActivity;
+import com.moringaschool.spoonacularapi.R;
+import com.moringaschool.spoonacularapi.models.Result;
+import com.moringaschool.spoonacularapi.ui.RecipeDetailsActivity;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;

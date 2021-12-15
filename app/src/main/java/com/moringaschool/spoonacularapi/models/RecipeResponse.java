@@ -1,11 +1,10 @@
 
-package com.moringaschool.yummlyapi.models;
+package com.moringaschool.spoonacularapi.models;
 
 import java.util.List;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.moringaschool.yummlyapi.models.Result;
 
 import org.parceler.Parcel;
 

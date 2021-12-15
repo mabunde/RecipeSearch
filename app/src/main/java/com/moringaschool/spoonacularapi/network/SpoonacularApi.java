@@ -1,6 +1,6 @@
-package com.moringaschool.yummlyapi.network;
+package com.moringaschool.spoonacularapi.network;
 
-import com.moringaschool.yummlyapi.models.RecipeResponse;
+import com.moringaschool.spoonacularapi.models.RecipeResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

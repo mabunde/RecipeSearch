@@ -1,4 +1,4 @@
-package com.moringaschool.yummlyapi;
+package com.moringaschool.spoonacularapi;
 
 public class Constants {
     public static final String SPOONACULAR_BASE_URL = "https://api.spoonacular.com/";

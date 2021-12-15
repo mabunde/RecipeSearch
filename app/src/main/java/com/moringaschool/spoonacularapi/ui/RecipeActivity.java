@@ -1,4 +1,4 @@
-package com.moringaschool.yummlyapi.ui;
+package com.moringaschool.spoonacularapi.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,13 +9,13 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.moringaschool.yummlyapi.Constants;
-import com.moringaschool.yummlyapi.R;
-import com.moringaschool.yummlyapi.adapters.RecipeListAdapter;
-import com.moringaschool.yummlyapi.models.Result;
-import com.moringaschool.yummlyapi.models.RecipeResponse;
-import com.moringaschool.yummlyapi.network.RecipeClient;
-import com.moringaschool.yummlyapi.network.SpoonacularApi;
+import com.moringaschool.spoonacularapi.Constants;
+import com.moringaschool.spoonacularapi.R;
+import com.moringaschool.spoonacularapi.adapters.RecipeListAdapter;
+import com.moringaschool.spoonacularapi.models.Result;
+import com.moringaschool.spoonacularapi.models.RecipeResponse;
+import com.moringaschool.spoonacularapi.network.RecipeClient;
+import com.moringaschool.spoonacularapi.network.SpoonacularApi;
 
 import java.util.List;
 

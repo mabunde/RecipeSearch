@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.moringaschool.yummlyapi">
+    package="com.moringaschool.spoonacularapi">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -19,21 +19,21 @@
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.yummlyapi.ui.MainActivity"></meta-data>
+                android:value=".ui.MainActivity"></meta-data>
         </activity>
         <activity
             android:name=".ui.SignInActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.yummlyapi.ui.SignupActivity"></meta-data>
+                android:value=".ui.SignupActivity"></meta-data>
         </activity>
         <activity
             android:name=".ui.SignupActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.yummlyapi.ui.MainActivity"></meta-data>
+                android:value=".ui.MainActivity"></meta-data>
         </activity>
         <activity
             android:name=".ui.MainActivity"

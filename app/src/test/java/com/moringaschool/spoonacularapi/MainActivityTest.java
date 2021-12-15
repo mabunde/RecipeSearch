@@ -1,9 +1,9 @@
-package com.moringaschool.yummlyapi;
+package com.moringaschool.spoonacularapi;
 import static junit.framework.TestCase.assertTrue;
 
 import android.widget.TextView;
 
-import com.moringaschool.yummlyapi.ui.MainActivity;
+import com.moringaschool.spoonacularapi.ui.MainActivity;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.moringaschool.yummlyapi;
+package com.moringaschool.spoonacularapi;
 
 import android.content.Context;
 

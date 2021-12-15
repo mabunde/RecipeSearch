@@ -1,5 +1,5 @@
 
-package com.moringaschool.yummlyapi.models;
+package com.moringaschool.spoonacularapi.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

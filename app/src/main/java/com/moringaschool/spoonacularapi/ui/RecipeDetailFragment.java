@@ -1,4 +1,4 @@
-package com.moringaschool.yummlyapi.ui;
+package com.moringaschool.spoonacularapi.ui;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.moringaschool.yummlyapi.R;
-import com.moringaschool.yummlyapi.models.Result;
+import com.moringaschool.spoonacularapi.R;
+import com.moringaschool.spoonacularapi.models.Result;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;

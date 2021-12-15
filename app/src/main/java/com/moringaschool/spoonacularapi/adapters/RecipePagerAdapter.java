@@ -1,12 +1,12 @@
-package com.moringaschool.yummlyapi.adapters;
+package com.moringaschool.spoonacularapi.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.moringaschool.yummlyapi.models.Result;
-import com.moringaschool.yummlyapi.ui.RecipeDetailFragment;
+import com.moringaschool.spoonacularapi.models.Result;
+import com.moringaschool.spoonacularapi.ui.RecipeDetailFragment;
 
 
 import java.util.List;
