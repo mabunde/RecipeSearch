@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.SavedRecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity2"
+            android:exported="false" />
+        <activity
             android:name=".ui.RecipeDetailsActivity"
             android:exported="false" />
         <activity
@@ -19,21 +25,21 @@
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity"></meta-data>
+                android:value=".ui.MainActivity" />
         </activity>
         <activity
             android:name=".ui.SignInActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.SignupActivity"></meta-data>
+                android:value=".ui.SignupActivity" />
         </activity>
         <activity
             android:name=".ui.SignupActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity"></meta-data>
+                android:value=".ui.MainActivity" />
         </activity>
         <activity
             android:name=".ui.MainActivity"

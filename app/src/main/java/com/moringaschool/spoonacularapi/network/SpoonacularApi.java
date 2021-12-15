@@ -11,4 +11,5 @@ public interface SpoonacularApi {
     Call<RecipeResponse> getRecipeList(
             @Query("apiKey") String myAPIKey
             );
+
 }

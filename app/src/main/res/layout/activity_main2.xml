@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,36 +7,56 @@
     android:background="#000000">
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/signinbg" />
+        android:id="@+id/imageView"
+        android:scaleType="centerCrop" />
 
     <TextView
-        android:id="@+id/appNameTextView"
+        android:id="@+id/welcomeMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        android:fontFamily="sans-serif"
-        android:text="Welcome To\nSpoonacular API"
+        android:text="Welcome back"
         android:textColor="@color/colorTextIcons"
-        android:textSize="50sp"
+        android:textSize="60sp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/getstartedButton"
+        android:id="@+id/searchRecipeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/savedRecipeButton"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginBottom="-25dp"
+        android:background="@drawable/button_custom2"
+        android:width="250dp"
+        android:padding="15dp"
+        android:text="Search Recipes"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/savedRecipeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_centerInParent="true"
         android:layout_marginStart="120dp"
+        android:layout_marginTop="50dp"
+        android:width="250dp"
+
+        android:layout_marginBottom="-500dp"
         android:background="@drawable/button_custom2"
         android:padding="15dp"
-        android:text="Get Started"
+        android:text="Saved Recipes"
         android:textColor="@color/colorTextIcons"
         android:textSize="25sp"
         android:textStyle="bold" />
-    </RelativeLayout>
+
+</RelativeLayout>
