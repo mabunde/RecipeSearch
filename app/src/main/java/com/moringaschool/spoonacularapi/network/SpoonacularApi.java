@@ -12,7 +12,6 @@ public interface SpoonacularApi {
             @Query("apiKey") String myAPIKeyz,
             @Query("addRecipeInformation") boolean addRecipeInformation,
             @Query("query") String query
-
             );
 
 //    @GET("recipes/search")
