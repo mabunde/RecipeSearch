@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "469923046013",
+    "project_id": "independentproject-1afaf",
+    "storage_bucket": "independentproject-1afaf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469923046013:android:f7a89685ae8ae295280714",
+        "android_client_info": {
+          "package_name": "com.moringaschool.spoonacularapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469923046013-um238eqlrr4ih114u50o09docel1dpja.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moringaschool.spoonacularapi",
+            "certificate_hash": "a86ad0e811a24323351cb9fcd7fb8f8c5e7e059b"
+          }
+        },
+        {
+          "client_id": "469923046013-nvlajp85nf8f8i3q8oadfuanfu72c9qt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTX1rmjqA_2jNl_abRg0bpxeZJwQASkSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "469923046013-nvlajp85nf8f8i3q8oadfuanfu72c9qt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469923046013:android:723b0fb950ddd7e5280714",
+        "android_client_info": {
+          "package_name": "com.moringaschool.yummlyapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469923046013-nvlajp85nf8f8i3q8oadfuanfu72c9qt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTX1rmjqA_2jNl_abRg0bpxeZJwQASkSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "469923046013-nvlajp85nf8f8i3q8oadfuanfu72c9qt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
