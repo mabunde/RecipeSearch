@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -93,7 +94,7 @@ public class RecipeActivity extends AppCompatActivity {
 
     private void fetchRecipe(String search){
         SpoonacularApi myClient= RecipeClient.getClient();
-        Call<RecipeResponse> call= myClient.getRecipeList(Constants.SPOONACULAR_API_KEY);
+        Call<RecipeResponse> call= myClient.getRecipeList(Constants.SPOONACULAR_API_KEY,true,search);
         call.enqueue(new Callback<RecipeResponse>() {
             @Override
             public void onResponse(Call<RecipeResponse> call, Response<RecipeResponse> response) {

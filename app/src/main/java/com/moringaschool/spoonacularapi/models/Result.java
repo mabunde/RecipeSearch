@@ -2,7 +2,6 @@
 package com.moringaschool.spoonacularapi.models;
 
 import java.util.List;
-import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -397,9 +396,9 @@ public class Result {
         return cuisines;
     }
 
-    public void setCuisines(List<Object> cuisines) {
-        this.cuisines = cuisines;
-    }
+//    public void setCuisines(List<Object> cuisines) {
+//        this.cuisines = cuisines;
+//    }
 
     public List<String> getDishTypes() {
         return dishTypes;
@@ -421,9 +420,9 @@ public class Result {
         return occasions;
     }
 
-    public void setOccasions(List<Object> occasions) {
-        this.occasions = occasions;
-    }
+//    public void setOccasions(List<Object> occasions) {
+//        this.occasions = occasions;
+//    }
 
     public List<AnalyzedInstruction> getAnalyzedInstructions() {
         return analyzedInstructions;
