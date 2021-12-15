@@ -7,9 +7,8 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface SpoonacularApi {
-    @GET("recipes/complexSearch")
+    @GET("recipes/complexSearch/?addRecipeInformation=true")
     Call<RecipeResponse> getRecipeList(
             @Query("apiKey") String myAPIKey
             );
-
 }

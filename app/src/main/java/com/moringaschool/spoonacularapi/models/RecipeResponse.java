@@ -2,13 +2,13 @@
 package com.moringaschool.spoonacularapi.models;
 
 import java.util.List;
-
+import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
 
-@Parcel
+@Parcel(Parcel.Serialization.BEAN)
 public class RecipeResponse {
 
     @SerializedName("results")
