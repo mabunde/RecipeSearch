@@ -79,7 +79,7 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
         mInstructionsTextView.setText(mRecipe.getSummary());
 
         mSourceURL.setOnClickListener(this);
-
+        mSaveRecipeButton.setOnClickListener(this);
         return view;
     }
     @Override
@@ -100,7 +100,7 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
             mRecipe.setId(pushId);
             pushRef.setValue(mRecipe);
 
-            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Saved successfully", Toast.LENGTH_SHORT).show();
 
         }
     }

@@ -35,7 +35,8 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
         mContext= itemView.getContext();
         itemView.setOnClickListener(this);
     }
-    public void bindRestaurant(Result recipe){
+    public void bindRecipe(Result recipe){
+
         ImageView recipeImageView = (ImageView) mView.findViewById(R.id.recipeImageView);
         TextView recipeTitle =(TextView) mView.findViewById(R.id.recipeTitle);
         TextView recipeReadyInMinutes =(TextView)  mView.findViewById(R.id.recipeReadyInMinutes);
@@ -63,7 +64,6 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     recipe.add(snapshot.getValue(Result.class));
                 }
-
                 int itemPosition = getLayoutPosition();
 
                 Intent intent = new Intent(mContext, RecipeDetailsActivity.class);
@@ -72,7 +72,6 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
 
                 mContext.startActivity(intent);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
