@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.moringaschool.spoonacularapi.R;
@@ -14,6 +15,8 @@ import butterknife.ButterKnife;
 
 public class SignInActivity extends AppCompatActivity implements View.OnClickListener{
  @BindView(R.id.registerTextView) TextView mRegisterTextView;
+    @BindView(R.id.signInButton)
+    Button mSignInButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +24,17 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_signin);
         ButterKnife.bind(this);
         mRegisterTextView.setOnClickListener(this);
+        mSignInButton.setOnClickListener(this);
     }
     @Override
     public void onClick(View view) {
         if (view == mRegisterTextView) {
             Intent intent = new Intent(SignInActivity.this, SignupActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        if (view == mSignInButton) {
+            Intent intent = new Intent(SignInActivity.this, NewMainActivity.class);
             startActivity(intent);
             finish();
         }

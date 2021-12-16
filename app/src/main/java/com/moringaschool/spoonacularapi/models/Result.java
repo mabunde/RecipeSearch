@@ -65,7 +65,7 @@ public class Result {
     private Double pricePerServing;
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private String id;
     @SerializedName("title")
     @Expose
     private String title;
@@ -152,7 +152,7 @@ public class Result {
                   Boolean glutenFree, Boolean dairyFree, Boolean veryHealthy, Boolean cheap,
                   Boolean veryPopular, Boolean sustainable, Integer weightWatcherSmartPoints,
                   String gaps, Boolean lowFodmap, Integer aggregateLikes, Double spoonacularScore, Double healthScore, String creditsText,
-                  String license, String sourceName, Double pricePerServing, Integer id, String title, Integer readyInMinutes, Integer servings,
+                  String license, String sourceName, Double pricePerServing, String id, String title, Integer readyInMinutes, Integer servings,
                   String sourceUrl, String image, String imageType, String summary, List<Object> cuisines, List<String> dishTypes, List<String> diets,
                   List<Object> occasions, List<AnalyzedInstruction> analyzedInstructions, String spoonacularSourceUrl) {
         super();

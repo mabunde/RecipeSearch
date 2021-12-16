@@ -15,7 +15,7 @@
             android:name=".ui.SavedRecipeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity2"
+            android:name=".ui.NewMainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.RecipeDetailsActivity"
@@ -32,14 +32,14 @@
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.SignupActivity" />
+                android:value=".ui.SignInActivity" />
         </activity>
         <activity
             android:name=".ui.SignupActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity" />
+                android:value=".ui.SignupActivity" />
         </activity>
         <activity
             android:name=".ui.MainActivity"

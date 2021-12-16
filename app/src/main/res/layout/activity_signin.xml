@@ -5,12 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SignInActivity">
+    tools:context=".ui.SignInActivity"
+    android:src="@drawable/signupbg"
+    android:scaleType="centerCrop">
+
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/signupbg"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/signupbg" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -26,54 +29,47 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="30dp"
             android:text="Welcome\nBack"
             android:textColor="@android:color/white"
             android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.174"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
-
+            android:textStyle="bold"/>
         <EditText
+            android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/white"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:padding="15dp"
-            android:textColor="#292929"
-            android:textColorHint="#797979" />
+            android:nextFocusDown="@+id/passwordEditText"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/white"
             android:hint="Password"
             android:inputType="textPassword"
-            android:padding="15dp"
-            android:textColor="#292929"
-            android:textColorHint="#797979" />
+            android:nextFocusDown="@+id/passwordEditText"
+            android:padding="10dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/signInButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
-            android:padding="15dp"
-            android:text="Sign in"
-            android:textColor="@android:color/white"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:padding="10dp"
+            android:text="Log in"
+            android:background="@color/colorAccent"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/colorTextIcons"/>
 
         <TextView
             android:id="@+id/registerTextView"

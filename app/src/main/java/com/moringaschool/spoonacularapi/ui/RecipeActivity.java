@@ -16,6 +16,8 @@ import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.moringaschool.spoonacularapi.Constants;
 import com.moringaschool.spoonacularapi.R;
 import com.moringaschool.spoonacularapi.adapters.RecipeListAdapter;
@@ -33,6 +35,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RecipeActivity extends AppCompatActivity {
+    private DatabaseReference mSearchedRecipeReference;
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
     private String mRecentSearch;
@@ -46,6 +49,11 @@ public class RecipeActivity extends AppCompatActivity {
     private List<Result> mRecipe;
 
     protected void onCreate(Bundle savedInstanceState) {
+                mSearchedRecipeReference = FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child(Constants.FIREBASE_CHILD_SEARCHED_RECIPE);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
         ButterKnife.bind(this);

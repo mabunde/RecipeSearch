@@ -68,7 +68,7 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
 
                 Intent intent = new Intent(mContext, RecipeDetailsActivity.class);
                 intent.putExtra("position", itemPosition + "");
-                intent.putExtra("restaurants", Parcels.wrap(recipe));
+                intent.putExtra("recipe", Parcels.wrap(recipe));
 
                 mContext.startActivity(intent);
             }

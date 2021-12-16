@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
@@ -36,6 +35,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     @BindView(R.id.passwordEditText) EditText mPasswordEditText;
     @BindView(R.id.confirmPasswordEditText) EditText mConfirmPasswordEditText;
     @BindView(R.id.loginTextView) TextView mLoginTextView;
+
     public static final String TAG = SignupActivity.class.getSimpleName();
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -48,24 +48,14 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         ButterKnife.bind(this);
-        mAuth = FirebaseAuth.getInstance();
 
         mLoginTextView.setOnClickListener(this);
         mSignUpButton.setOnClickListener(this);
+
+        mAuth = FirebaseAuth.getInstance();
         createAuthStateListener();
 
     }
-    private void showProgressBar() {
-        mSignInProgressBar.setVisibility(View.VISIBLE);
-        mLoadingSignUp.setVisibility(View.VISIBLE);
-        mLoadingSignUp.setText("Sign Up process in Progress");
-    }
-
-    private void hideProgressBar() {
-        mSignInProgressBar.setVisibility(View.GONE);
-        mLoadingSignUp.setVisibility(View.GONE);
-    }
-
     @Override
     public void onClick(View view) {
 
@@ -81,7 +71,6 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         }
 
     }
-
     public void createNewUser() {
         mName = mNameEditText.getText().toString().trim();
         final String name = mNameEditText.getText().toString().trim();
@@ -98,30 +87,41 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         showProgressBar();
 
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        hideProgressBar();
+                .addOnCompleteListener(this, task -> {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "Authentication successful");
+                            hideProgressBar();
                             createFirebaseUserProfile(Objects.requireNonNull(task.getResult().getUser()));
+                            Toast.makeText(SignupActivity.this, "Firebase Authentication is successful.", Toast.LENGTH_SHORT).show();
+
                         } else {
                             Toast.makeText(SignupActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
-
-                    }
-
                 });
+
     }
+
+    private void showProgressBar() {
+        mSignInProgressBar.setVisibility(View.VISIBLE);
+        mLoadingSignUp.setVisibility(View.VISIBLE);
+        mLoadingSignUp.setText("Sign Up process in Progress");
+    }
+
+    private void hideProgressBar() {
+        mSignInProgressBar.setVisibility(View.GONE);
+        mLoadingSignUp.setVisibility(View.GONE);
+    }
+
+
+
     private void createAuthStateListener(){
         mAuthListener= new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 final FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
-                    Intent intent = new Intent(SignupActivity.this, MainActivity2.class);
+                    Intent intent = new Intent(SignupActivity.this, NewMainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();

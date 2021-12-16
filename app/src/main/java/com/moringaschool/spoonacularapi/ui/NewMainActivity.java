@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,32 +21,22 @@ import com.moringaschool.spoonacularapi.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity2 extends AppCompatActivity  implements View.OnClickListener{
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
+public class NewMainActivity extends AppCompatActivity  implements View.OnClickListener{
+    private SharedPreferences.Editor mEditor;
+
     @BindView(R.id.searchRecipeButton) Button mSearchRecipeButton;
     @BindView(R.id.appNameTextView) TextView mAppNameTextView;
     @BindView(R.id.savedRecipeButton) Button mSavedRecipeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_new_main);
         ButterKnife.bind(this);
 
-        mAuth = FirebaseAuth.getInstance();
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    getSupportActionBar().setTitle("Welcome, " + user.getDisplayName() + "!");
-                } else {
+        SharedPreferences mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
 
-                }
-            }
-        };
         mSearchRecipeButton.setOnClickListener(this);
         mSavedRecipeButton.setOnClickListener(this);
     }
@@ -53,12 +45,12 @@ public class MainActivity2 extends AppCompatActivity  implements View.OnClickLis
     public void onClick(View v) {
 
         if(v == mSearchRecipeButton) {
-            Intent intent = new Intent(MainActivity2.this, RecipeActivity.class);
+            Intent intent = new Intent(NewMainActivity.this, RecipeActivity.class);
             startActivity(intent);
         }
 
         if (v == mSavedRecipeButton) {
-            Intent intent = new Intent(MainActivity2.this, SavedRecipeActivity.class);
+            Intent intent = new Intent(NewMainActivity.this, SavedRecipeActivity.class);
             startActivity(intent);
         }
     }
@@ -79,22 +71,12 @@ public class MainActivity2 extends AppCompatActivity  implements View.OnClickLis
     }
     private void logout() {
         FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(MainActivity2.this, SignInActivity.class);
+        Intent intent = new Intent(NewMainActivity.this, SignInActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
     }
-    @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
-        }
-    }
+//    private void addToSharedPrefs(String username) {
+//        mEditor.putString(Constants.USER_NAME, username).apply();
+//    }
 }
