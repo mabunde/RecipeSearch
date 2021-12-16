@@ -148,7 +148,13 @@ public class Result {
      * @param sourceName
      * @param spoonacularSourceUrl
      */
-    public Result(Boolean vegetarian, Boolean vegan, Boolean glutenFree, Boolean dairyFree, Boolean veryHealthy, Boolean cheap, Boolean veryPopular, Boolean sustainable, Integer weightWatcherSmartPoints, String gaps, Boolean lowFodmap, Integer aggregateLikes, Double spoonacularScore, Double healthScore, String creditsText, String license, String sourceName, Double pricePerServing, Integer id, String title, Integer readyInMinutes, Integer servings, String sourceUrl, String image, String imageType, String summary, List<Object> cuisines, List<String> dishTypes, List<String> diets, List<Object> occasions, List<AnalyzedInstruction> analyzedInstructions, String spoonacularSourceUrl) {
+    public Result(Boolean vegetarian, Boolean vegan,
+                  Boolean glutenFree, Boolean dairyFree, Boolean veryHealthy, Boolean cheap,
+                  Boolean veryPopular, Boolean sustainable, Integer weightWatcherSmartPoints,
+                  String gaps, Boolean lowFodmap, Integer aggregateLikes, Double spoonacularScore, Double healthScore, String creditsText,
+                  String license, String sourceName, Double pricePerServing, Integer id, String title, Integer readyInMinutes, Integer servings,
+                  String sourceUrl, String image, String imageType, String summary, List<Object> cuisines, List<String> dishTypes, List<String> diets,
+                  List<Object> occasions, List<AnalyzedInstruction> analyzedInstructions, String spoonacularSourceUrl) {
         super();
         this.vegetarian = vegetarian;
         this.vegan = vegan;
@@ -328,11 +334,11 @@ public class Result {
         this.pricePerServing = pricePerServing;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

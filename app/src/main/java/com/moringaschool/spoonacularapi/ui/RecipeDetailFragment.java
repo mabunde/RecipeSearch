@@ -12,7 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.moringaschool.spoonacularapi.Constants;
 import com.moringaschool.spoonacularapi.R;
 import com.moringaschool.spoonacularapi.models.Result;
 import com.squareup.picasso.Picasso;
@@ -33,6 +39,8 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
     @BindView(R.id.sourceNameTextView) TextView mSourceNameTextView;
     @BindView(R.id.sourceURL) TextView mSourceURL;
     @BindView(R.id.instructionsTextView) TextView mInstructionsTextView;
+    @BindView(R.id.saveRecipeButton) TextView mSaveRecipeButton;
+
 
 
     private Result mRecipe;
@@ -80,5 +88,22 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
             Intent webIntent = new Intent (Intent.ACTION_VIEW, Uri.parse(mRecipe.getSourceUrl()));
             startActivity(webIntent);
         }
+        if(v ==mSaveRecipeButton){
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+            DatabaseReference restaurantRef= FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_SEARCHED_RECIPE)
+                    .child(uid);
+            DatabaseReference pushRef = restaurantRef.push();
+            String pushId = pushRef.getKey();
+            mRecipe.setId(pushId);
+            pushRef.setValue(mRecipe);
+
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+
+        }
     }
+
+
 }
