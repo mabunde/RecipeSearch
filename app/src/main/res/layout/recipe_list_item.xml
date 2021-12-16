@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="70pt">
 
     <ImageView
         android:layout_width="130dp"
@@ -23,9 +23,39 @@
             android:layout_height="wrap_content"
             android:id="@+id/recipeTitle"
             android:textSize="20dp"
-            android:textStyle="italic"
+            android:textStyle="bold"
             android:text="Recipe Name"
             android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recipeReadyInMinutes"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            android:text="Ready in minutes"
+            android:textColor="@color/colorAccent"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recipeTotalServing"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            android:text="Serving "
+            android:textColor="@color/colorAccent"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/priceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Price"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+        </RelativeLayout>
 
     </LinearLayout>
 </LinearLayout>

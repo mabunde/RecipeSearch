@@ -36,16 +36,36 @@
                 android:textSize="20sp"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Source name"
+                android:id="@+id/sourceNameTextView"
+                android:layout_alignTop="@+id/recipeNameTextView"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Source"
+                android:id="@+id/sourceURL"
+                android:textSize="18sp"
+                android:layout_below="@+id/recipeNameTextView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="italic" />
 
         </RelativeLayout>
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_above="@+id/saveRecipeButton"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
@@ -56,15 +76,11 @@
                 android:paddingRight="30dp">
 
                 <TextView
-                    android:id="@+id/imageTypeTextView"
+                    android:id="@+id/instructionsTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:drawableLeft="@drawable/ic_baseline_image_white_18dp"
-                    android:drawablePadding="4dp"
-                    android:gravity="center"
-                    android:text="Image type"
-                    android:textAllCaps="true"
+                    android:text="Summary"
                     android:textColor="@color/colorTextIcons"
                     android:textSize="15sp"
                     android:textStyle="bold" />

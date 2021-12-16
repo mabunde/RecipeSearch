@@ -54,6 +54,10 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
 
         @BindView(R.id.recipeImageView) ImageView mRecipeImageView;
         @BindView(R.id.recipeTitle) TextView mRecipeTitle;
+        @BindView(R.id.recipeReadyInMinutes) TextView mRecipeReadyInMinutes;
+        @BindView(R.id.recipeTotalServing) TextView mRecipeTotalServing;
+        @BindView(R.id.priceTextView) TextView mPriceTextView;
+
         private Context mContext;
 
         public RecipeListViewHolder(View itemView){
@@ -66,6 +70,10 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
         public void bindRecipeList( Result result){
             Picasso.get().load(result.getImage()).into(mRecipeImageView);
             mRecipeTitle.setText(result.getTitle());
+            mRecipeReadyInMinutes.setText("Ready in "+result.getReadyInMinutes()+ " minutes");
+            mRecipeTotalServing.setText("Serving "+result.getServings()+ " people");
+            mPriceTextView.setText("Cost "+result.getPricePerServing()+"$" );
+
         }
         @Override
         public void onClick(View view) {

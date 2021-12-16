@@ -30,7 +30,10 @@ import butterknife.ButterKnife;
 public class RecipeDetailFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.recipeImageView) ImageView mImageLabel;
     @BindView(R.id.recipeNameTextView) TextView mNameLabel;
-    @BindView(R.id.imageTypeTextView) TextView mImageTypeLabel;
+    @BindView(R.id.sourceNameTextView) TextView mSourceNameTextView;
+    @BindView(R.id.sourceURL) TextView mSourceURL;
+    @BindView(R.id.instructionsTextView) TextView mInstructionsTextView;
+
 
     private Result mRecipe;
 
@@ -63,16 +66,18 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
         ButterKnife.bind(this, view);
         Picasso.get().load(mRecipe.getImage()).into(mImageLabel);
         mNameLabel.setText(mRecipe.getTitle());
-        mImageTypeLabel.setText(mRecipe.getImageType());
+        mSourceNameTextView.setText(mRecipe.getSourceName());
+        mSourceURL.setText(mRecipe.getSourceUrl());
+        mInstructionsTextView.setText(mRecipe.getSummary());
 
-        mImageLabel.setOnClickListener(this);
+        mSourceURL.setOnClickListener(this);
 
         return view;
     }
     @Override
     public void onClick(View v) {
-        if (v == mImageLabel) {
-            Intent webIntent = new Intent (Intent.ACTION_VIEW, Uri.parse(mRecipe.getImage()));
+        if (v == mSourceURL) {
+            Intent webIntent = new Intent (Intent.ACTION_VIEW, Uri.parse(mRecipe.getSourceUrl()));
             startActivity(webIntent);
         }
     }
