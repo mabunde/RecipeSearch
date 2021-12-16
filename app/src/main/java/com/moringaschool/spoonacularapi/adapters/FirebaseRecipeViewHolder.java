@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -74,6 +75,7 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(mContext.getApplicationContext(), "Cancelled", Toast.LENGTH_LONG).show();
 
             }
         });

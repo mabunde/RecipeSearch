@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ import butterknife.ButterKnife;
 public class SavedRecipeActivity extends AppCompatActivity {
     private DatabaseReference mRecipeReference;
     private FirebaseRecyclerAdapter<Result, FirebaseRecipeViewHolder> mFirebaseAdapter;
+
     @BindView(R.id.recipeRecyclerview) RecyclerView mRecipeRecyclerview;
     @BindView(R.id.errorMessage) TextView mErrorMessage;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
@@ -45,9 +47,10 @@ public class SavedRecipeActivity extends AppCompatActivity {
 
         mRecipeReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_RECIPE)
                 .child(uid);
+        Log.e("Dennis", String.valueOf(mRecipeReference));
         setUpFirebaseAdapter();
         hideProgressBar();
-        showSavedVideos();
+        showSavedRecipe();
     }
     private void setUpFirebaseAdapter(){
         FirebaseRecyclerOptions<Result> options =
@@ -57,10 +60,9 @@ public class SavedRecipeActivity extends AppCompatActivity {
 
         mFirebaseAdapter = new FirebaseRecyclerAdapter<Result, FirebaseRecipeViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull FirebaseRecipeViewHolder firebaseVideoViewHolder, int position, @NonNull Result recipe) {
-                firebaseVideoViewHolder.bindRecipe(recipe);
+            protected void onBindViewHolder(@NonNull FirebaseRecipeViewHolder firebaseRecipeViewHolder, int position, @NonNull Result recipe) {
+                firebaseRecipeViewHolder.bindRecipe(recipe);
             }
-
             @NonNull
             @Override
             public FirebaseRecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -87,7 +89,7 @@ public class SavedRecipeActivity extends AppCompatActivity {
         }
     }
 
-    private void showSavedVideos() {
+    private void showSavedRecipe() {
         mRecipeRecyclerview.setVisibility(View.VISIBLE);
     }
 
