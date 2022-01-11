@@ -28,6 +28,9 @@ public class NewMainActivity extends AppCompatActivity  implements View.OnClickL
     @BindView(R.id.appNameTextView) TextView mAppNameTextView;
     @BindView(R.id.savedRecipeButton) Button mSavedRecipeButton;
 
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,20 @@ public class NewMainActivity extends AppCompatActivity  implements View.OnClickL
 
         mSearchRecipeButton.setOnClickListener(this);
         mSavedRecipeButton.setOnClickListener(this);
+
+        //welcome Message
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    getSupportActionBar().setTitle("Welcome, " + user.getDisplayName() + " !");
+                } else {
+
+                }
+            }
+        };
     }
 
     @Override

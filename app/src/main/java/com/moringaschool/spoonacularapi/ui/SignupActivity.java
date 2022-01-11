@@ -113,8 +113,6 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         mLoadingSignUp.setVisibility(View.GONE);
     }
 
-
-
     private void createAuthStateListener(){
         mAuthListener= new FirebaseAuth.AuthStateListener() {
             @Override
