@@ -56,7 +56,7 @@
             android:backgroundTint="@android:color/transparent"
             android:hint="Password"
             android:inputType="textPassword"
-            android:padding="15dp"
+            android:padding="14dp"
             android:textColor="#292929"
             android:textColorHint="#797979" />
 
