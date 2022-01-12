@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback{
 
-    private final ItemTouchHelperAdapter mAdapter;
+    private final ItemTouchHelperAdapter mTouchAdapter;
 
     public SimpleItemTouchHelperCallback(ItemTouchHelperAdapter adapter) {
-        mAdapter = adapter;
+        mTouchAdapter = adapter;
     }
 
     @Override
@@ -36,13 +36,13 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback{
         if (source.getItemViewType() != target.getItemViewType()) {
             return false;
         }
-        mAdapter.onItemMove(source.getBindingAdapterPosition(), target.getBindingAdapterPosition());
+        mTouchAdapter.onItemMove(source.getBindingAdapterPosition(), target.getBindingAdapterPosition());
         return true;
     }
 
 
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int i) {
-        mAdapter.onItemDismiss(viewHolder.getBindingAdapterPosition());
+        mTouchAdapter.onItemDismiss(viewHolder.getBindingAdapterPosition());
     }
 }

@@ -1,9 +1,11 @@
 package com.moringaschool.spoonacularapi.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -25,6 +27,9 @@ import com.moringaschool.spoonacularapi.models.Result;
 import com.moringaschool.spoonacularapi.models.RecipeResponse;
 import com.moringaschool.spoonacularapi.network.RecipeClient;
 import com.moringaschool.spoonacularapi.network.SpoonacularApi;
+import com.moringaschool.spoonacularapi.util.ItemTouchHelperAdapter;
+import com.moringaschool.spoonacularapi.util.OnSelectedRecipeListener;
+import com.moringaschool.spoonacularapi.util.SimpleItemTouchHelperCallback;
 
 import java.util.List;
 
@@ -39,6 +44,7 @@ public class RecipeActivity extends AppCompatActivity {
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
     private String mRecentSearch;
+    private ItemTouchHelper mItemTouchHelper;
 
 
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
@@ -131,6 +137,9 @@ public class RecipeActivity extends AppCompatActivity {
             }
 
         });
+        ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback((ItemTouchHelperAdapter) mAdapter);
+        mItemTouchHelper = new ItemTouchHelper(callback);
+        mItemTouchHelper.attachToRecyclerView(mRecipeRecyclerview);
 
     }
     private void hideProgressBar() {

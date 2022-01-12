@@ -24,6 +24,8 @@ import com.moringaschool.spoonacularapi.Constants;
 import com.moringaschool.spoonacularapi.R;
 import com.moringaschool.spoonacularapi.adapters.FirebaseRecipeViewHolder;
 import com.moringaschool.spoonacularapi.models.Result;
+import com.moringaschool.spoonacularapi.util.ItemTouchHelperAdapter;
+import com.moringaschool.spoonacularapi.util.SimpleItemTouchHelperCallback;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,6 +33,7 @@ import butterknife.ButterKnife;
 public class SavedRecipeActivity extends AppCompatActivity {
     private DatabaseReference mRecipeReference;
     private ItemTouchHelper mItemTouchHelper;
+
 
     private FirebaseRecyclerAdapter<Result, FirebaseRecipeViewHolder> mFirebaseAdapter;
 
@@ -80,6 +83,10 @@ public class SavedRecipeActivity extends AppCompatActivity {
 
         mRecipeRecyclerview.setLayoutManager(new LinearLayoutManager(this));
         mRecipeRecyclerview.setAdapter(mFirebaseAdapter);
+
+        ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback((ItemTouchHelperAdapter) mFirebaseAdapter);
+        mItemTouchHelper = new ItemTouchHelper(callback);
+        mItemTouchHelper.attachToRecyclerView(mRecipeRecyclerview);
     }
 
     @Override

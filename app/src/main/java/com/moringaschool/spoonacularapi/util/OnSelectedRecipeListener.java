@@ -5,5 +5,5 @@ import com.moringaschool.spoonacularapi.models.Result;
 import java.util.List;
 
 public interface OnSelectedRecipeListener {
-    public void onPetSelected(Integer position, List<Result> recipe, String source);
+    public void onRecipeSelected(Integer position, List<Result> recipe, String source);
 }
