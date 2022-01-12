@@ -9,7 +9,7 @@
         <entry key="app/src/main/res/layout-land/activity_recipe.xml" value="0.1" />
         <entry key="app/src/main/res/layout-land/activity_recipe_details.xml" value="0.1" />
         <entry key="app/src/main/res/layout-land/activity_signin.xml" value="0.1" />
-        <entry key="app/src/main/res/layout-land/activity_signup.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-land/activity_signup.xml" value="0.25" />
         <entry key="app/src/main/res/layout-land/recipe_list_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.22" />
