@@ -2,6 +2,7 @@ package com.moringaschool.spoonacularapi.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,10 +30,11 @@ import butterknife.ButterKnife;
 
 public class SavedRecipeActivity extends AppCompatActivity {
     private DatabaseReference mRecipeReference;
+    private ItemTouchHelper mItemTouchHelper;
+
     private FirebaseRecyclerAdapter<Result, FirebaseRecipeViewHolder> mFirebaseAdapter;
 
     @BindView(R.id.recipeRecyclerview) RecyclerView mRecipeRecyclerview;
-    @BindView(R.id.errorMessage) TextView mErrorMessage;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
 
     @Override
@@ -41,14 +43,17 @@ public class SavedRecipeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe);
         ButterKnife.bind(this);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser user = FirebaseAuth.getInstance()
+                .getCurrentUser();
         assert user != null;
         String uid = user.getUid();
 
-        mRecipeReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_RECIPE)
+        mRecipeReference = FirebaseDatabase.getInstance()
+                .getReference(Constants.FIREBASE_CHILD_RECIPE)
                 .child(uid);
-        Log.e("Dennis", String.valueOf(mRecipeReference));
+//        Log.e("Dennis", String.valueOf(mRecipeReference));
         setUpFirebaseAdapter();
+
         hideProgressBar();
         showSavedRecipe();
     }
@@ -60,13 +65,15 @@ public class SavedRecipeActivity extends AppCompatActivity {
 
         mFirebaseAdapter = new FirebaseRecyclerAdapter<Result, FirebaseRecipeViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull FirebaseRecipeViewHolder firebaseRecipeViewHolder, int position, @NonNull Result recipe) {
+            protected void onBindViewHolder(@NonNull FirebaseRecipeViewHolder firebaseRecipeViewHolder,
+                                            int position, @NonNull Result recipe) {
                 firebaseRecipeViewHolder.bindRecipe(recipe);
             }
             @NonNull
             @Override
             public FirebaseRecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_list_item, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_list_item,
+                        parent, false);
                 return new FirebaseRecipeViewHolder(view);
             }
         };
